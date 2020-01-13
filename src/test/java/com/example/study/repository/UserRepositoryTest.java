@@ -21,7 +21,6 @@ public class UserRepositoryTest extends StudyApplication {
         user.setPhoneNumber("010-3333-3333");
         user.setCreatedAt(LocalDateTime.now());
         user.setCreatedBy("admin");
-
         User newUser = userRepository.save(user);
         System.out.println(newUser);
     }
