@@ -15,6 +15,6 @@ public class GetController {
     @GetMapping("/getParameter")
     public SearchParam getParameter(SearchParam searchParam){
         return searchParam;
-        
+
     }
 }
