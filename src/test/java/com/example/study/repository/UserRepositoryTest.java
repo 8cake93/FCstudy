@@ -1,6 +1,7 @@
 package com.example.study.repository;
 
 import com.example.study.StudyApplication;
+import com.example.study.StudyApplicationTests;
 import com.example.study.model.entity.User;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,7 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import java.time.LocalDateTime;
 import java.util.Optional;
 
-public class UserRepositoryTest extends StudyApplication {
+public class UserRepositoryTest extends StudyApplicationTests {
 
     @Autowired
     private UserRepository userRepository;
