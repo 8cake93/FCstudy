@@ -13,24 +13,16 @@ import java.time.LocalDateTime;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Entity // == table
-public class User {
+@Entity
+public class OrderDetail {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String account;
+    private LocalDateTime orderAt;
 
-    private String email;
+    private Long userId;
 
-    private String phoneNumber;
-
-    private LocalDateTime createdAt;
-
-    private String createdBy;
-
-    private LocalDateTime updatedAt;
-
-    private String updatedBy;
+    private Long itemId;
 }

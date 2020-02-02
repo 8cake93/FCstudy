@@ -17,8 +17,8 @@ public class UserRepositoryTest extends StudyApplicationTests {
     @Test
     public void create(){
         User user = new User();
-        user.setAccount("TestUser01");
-        user.setEmail("TestUser01@gmail.com");
+        user.setAccount("TestUser03");
+        user.setEmail("TestUser03@gmail.com");
         user.setPhoneNumber("010-3333-3333");
         user.setCreatedAt(LocalDateTime.now());
         user.setCreatedBy("admin");
@@ -27,17 +27,21 @@ public class UserRepositoryTest extends StudyApplicationTests {
     }
     @Test
     public void read(){
-        Optional<User> user = userRepository.findById(2L);
+        Optional<User> user = userRepository.findById(3L);
 
         user.ifPresent(selectUser->{
             System.out.println(selectUser);
 
         });
     }
+    @Test
     public void update(){
+        Optional<User> user = userRepository.findById(3L);
 
-    }
-    public void delete(){
-
+        user.ifPresent(selectUser->{
+            selectUser.setAccount("ersu");
+            System.out.println(selectUser);
+            userRepository.save(selectUser);
+        });
     }
 }
