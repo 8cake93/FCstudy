@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.Assert;
 
+import java.time.LocalDateTime;
 import java.util.Optional;
 
 public class ItemRepositoryTest extends StudyApplicationTests {
@@ -15,9 +16,16 @@ public class ItemRepositoryTest extends StudyApplicationTests {
     @Test
     public void create(){
         Item item = new Item();
-        item.setName("노트북1");
-        item.setPrice(101);
-        item.setContent("얼쑤");
+        item.setStatus("노트북1");
+        item.setName("림얼쑤");
+        item.setTitle("얼쑤");
+        item.setContent("이이잉");
+        item.setPrice(900000);
+        item.setBrandName("애플");
+        item.setRegisteredAt(LocalDateTime.now());
+        item.setCreatedAt(LocalDateTime.now());
+        item.setCreatedBy("IMS");
+        item.setPartnerId(1L);
 
         itemRepository.save(item);
     }
