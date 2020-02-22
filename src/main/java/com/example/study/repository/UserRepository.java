@@ -11,5 +11,5 @@ import java.util.Optional;
 @Component
 public interface UserRepository extends JpaRepository<User,Long> {
 
-    Optional<User> findFirstByPhoneNumberOrderByIdDesc(String phoneNumber);
+    User findFirstByPhoneNumberOrderByIdDesc(String phoneNumber);
 }

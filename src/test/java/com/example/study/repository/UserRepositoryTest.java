@@ -19,9 +19,9 @@ public class UserRepositoryTest extends StudyApplicationTests {
 
     @Test
     public void create(){
-        String account = "ersu2";
-        String password = "pw";
-        String status = "resistered";
+        String account = "Test01";
+        String password = "test01";
+        String status = "REGISTERED";
         String email = "ersu@gmail.com";
         String phoneNumber = "010-1010-1010";
         LocalDateTime registeredAt = LocalDateTime.now();
@@ -35,19 +35,25 @@ public class UserRepositoryTest extends StudyApplicationTests {
         user.setEmail(email);
         user.setPhoneNumber(phoneNumber);
         user.setRegisteredAt(registeredAt);
-        user.setCreatedAt(createdAt);
-        user.setCreatedBy(createdBy);
+
 
         userRepository.save(user);
     }
     @Test
     @Transactional
     public void read(){
-        Optional<User> user = userRepository.findFirstByPhoneNumberOrderByIdDesc("010-1010-1010");
+       User user = userRepository.findFirstByPhoneNumberOrderByIdDesc("010-1010-1010");
 
-        user.ifPresent(a->{
-            System.out.println(a.getPassword());
-        });
+       if(user!=null){
+           user.getOrderGroupList().stream().forEach(orderGroup -> {
+               System.out.println("수령인" + orderGroup.getRevAddress());
+               System.out.println(orderGroup.getId());
+           });
+       }
+
+//        user.ifPresent(a->{
+//            System.out.println(a.getPassword());
+//        });
     }
     @Test
     public void update(){
