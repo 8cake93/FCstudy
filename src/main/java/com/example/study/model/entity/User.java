@@ -13,7 +13,7 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity // == table
-@ToString.(exclude = {"orderGroup"})
+@ToString(exclude = {"orderGroup"})
 public class User {
 
     @Id
